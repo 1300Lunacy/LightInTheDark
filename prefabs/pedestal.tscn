@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6t2q4rqdl0fx"]
+
+[ext_resource type="Script" path="res://scripts/pedestal.gd" id="1_sx8pp"]
+[ext_resource type="Texture2D" uid="uid://csdupo6ms5363" path="res://Pedestal-Modern-PNG-Photo.png" id="2_p7iw7"]
+[ext_resource type="Texture2D" uid="uid://4ykr0ipgqj8d" path="res://lampcherah.png" id="3_xcavx"]
+[ext_resource type="Texture2D" uid="uid://cik5wkputxptj" path="res://2d_lights_and_shadows_neutral_point_light.webp" id="4_ui2o5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eoov5"]
+size = Vector2(122, 143)
+
+[node name="pedestal" type="Area2D"]
+position = Vector2(261, -211)
+script = ExtResource("1_sx8pp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-115, 143.5)
+shape = SubResource("RectangleShape2D_eoov5")
+
+[node name="pedestal" type="Sprite2D" parent="."]
+position = Vector2(-115, 176)
+scale = Vector2(0.0327315, 0.0327315)
+texture = ExtResource("2_p7iw7")
+
+[node name="lamp" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-116, 117)
+scale = Vector2(1.09515, 1.04272)
+texture = ExtResource("3_xcavx")
+
+[node name="PointLight2D" type="PointLight2D" parent="lamp"]
+texture = ExtResource("4_ui2o5")
+
+[node name="pedestal2" type="Node2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

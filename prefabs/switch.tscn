@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbf7g3u2fr6ev"]
+
+[ext_resource type="Texture2D" uid="uid://csdupo6ms5363" path="res://Pedestal-Modern-PNG-Photo.png" id="1_6cfsh"]
+[ext_resource type="Script" path="res://scripts/switch.gd" id="1_x7iju"]
+[ext_resource type="Texture2D" uid="uid://338c0qo4gxsi" path="res://icon.svg" id="2_dvd42"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqhqv"]
+size = Vector2(122, 143)
+
+[node name="switch" type="Area2D"]
+script = ExtResource("1_x7iju")
+
+[node name="pedestal" type="Sprite2D" parent="."]
+position = Vector2(0.14064, -43.7222)
+scale = Vector2(0.0327315, 0.0327315)
+texture = ExtResource("1_6cfsh")
+
+[node name="lamp" type="Sprite2D" parent="."]
+position = Vector2(0, -89)
+scale = Vector2(0.223794, 0.22385)
+texture = ExtResource("2_dvd42")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.14064, -76.2222)
+shape = SubResource("RectangleShape2D_dqhqv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

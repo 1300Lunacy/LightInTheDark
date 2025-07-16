@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bphj6iflkqsn"]
+
+[ext_resource type="Script" path="res://scripts/platform_challenge.gd" id="1_uwu01"]
+
+[node name="platform challenge" type="Node2D"]
+position = Vector2(281, 40)
+script = ExtResource("1_uwu01")

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://yb2aknig5oqt"]
+
+[ext_resource type="Script" path="res://scripts/pedeplatform.gd" id="1_7kbku"]
+[ext_resource type="Texture2D" uid="uid://bwhaasacwxc71" path="res://light platform.png" id="2_hb1cf"]
+[ext_resource type="Texture2D" uid="uid://cik5wkputxptj" path="res://2d_lights_and_shadows_neutral_point_light.webp" id="3_ifqjl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_itigm"]
+size = Vector2(276, 50)
+
+[node name="pedeplatform" type="StaticBody2D"]
+position = Vector2(88, -37)
+script = ExtResource("1_7kbku")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-88, 36)
+scale = Vector2(0.463045, 0.160589)
+texture = ExtResource("2_hb1cf")
+
+[node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
+color = Color(1, 1, 0.529412, 1)
+texture = ExtResource("3_ifqjl")
+texture_scale = 2.8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-88, 38)
+shape = SubResource("RectangleShape2D_itigm")
+disabled = true
+one_way_collision = true
+one_way_collision_margin = 20.0
+debug_color = Color(0.377436, 0.475565, 1, 0.42)

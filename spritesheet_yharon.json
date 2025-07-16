@@ -1,0 +1,35 @@
+{
+	"frames": {
+		"Artboard 4_1@2x.png": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 1685,
+				"h": 2382
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1685,
+				"h": 2382
+			},
+			"sourceSize": {
+				"w": 1685,
+				"h": 2382
+			}
+		}
+	},
+	"meta": {
+		"app": "http://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "spritesheet.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 1687,
+			"h": 2384
+		},
+		"scale": "1"
+	}
+}

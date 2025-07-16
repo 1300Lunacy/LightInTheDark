@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://ciracireggjkn"]
+
+[ext_resource type="Script" path="res://scripts/switchplatform.gd" id="1_g21bt"]
+[ext_resource type="Texture2D" uid="uid://dy15du237icmt" path="res://fakelight platform.png" id="2_bsk5h"]
+[ext_resource type="Texture2D" uid="uid://cik5wkputxptj" path="res://2d_lights_and_shadows_neutral_point_light.webp" id="3_h3ekj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xi246"]
+size = Vector2(54, 14)
+
+[node name="switchplatform" type="StaticBody2D"]
+script = ExtResource("1_g21bt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.0908948, 0.0519894)
+texture = ExtResource("2_bsk5h")
+
+[node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
+color = Color(1, 0.509804, 1, 1)
+texture = ExtResource("3_h3ekj")
+texture_scale = 2.8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xi246")
+disabled = true
+one_way_collision = true
+one_way_collision_margin = 20.0

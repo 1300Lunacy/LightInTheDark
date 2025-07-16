@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://oasbbjt7dcx2"]
+
+[ext_resource type="Script" path="res://scripts/button.gd" id="1_x8ic2"]
+
+[node name="level_2" type="Node2D"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="UIElements" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextEdit" type="TextEdit" parent="UI/UIElements"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -198.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "gvhj"
+placeholder_text = "skibidi"
+editable = false
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="UI/UIElements"]
+layout_mode = 0
+offset_left = 910.0
+offset_top = 671.0
+offset_right = 1023.0
+offset_bottom = 715.0
+text = "Skip
+"
+script = ExtResource("1_x8ic2")
+next_scene = "level_2"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="UI/UIElements/Button" to="UI/UIElements/Button" method="_on_pressed"]
