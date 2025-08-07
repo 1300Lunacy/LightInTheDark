@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://oasbbjt7dcx2"]
+[gd_scene load_steps=3 format=3 uid="uid://oasbbjt7dcx2"]
 
 [ext_resource type="Script" path="res://scripts/button.gd" id="1_x8ic2"]
+[ext_resource type="Texture2D" uid="uid://7rbiq6e8h5qj" path="res://visualnovelart_1.png" id="2_yysb4"]
 
 [node name="level_2" type="Node2D"]
 
@@ -15,6 +16,11 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="Visualnovelart1" type="Sprite2D" parent="UI/UIElements"]
+position = Vector2(511, 365)
+scale = Vector2(0.10248, 0.10248)
+texture = ExtResource("2_yysb4")
+
 [node name="TextEdit" type="TextEdit" parent="UI/UIElements"]
 layout_mode = 1
 anchors_preset = 12
@@ -24,7 +30,14 @@ anchor_bottom = 1.0
 offset_top = -198.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "gvhj"
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "Ever since The Sun fell, the world became enveloped in darkness...
+The heretics rebelled against the Sun and Moon, and slain the Sun in their fury, and for their
+transgressions, The Moon coated the world in pitch black darkness, drowning all the heretics 
+in the black sea...
+"
 placeholder_text = "skibidi"
 editable = false
 context_menu_enabled = false
@@ -45,7 +58,7 @@ offset_bottom = 715.0
 text = "Skip
 "
 script = ExtResource("1_x8ic2")
-next_scene = "level_2"
+next_scene = "level_1"
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="UI/UIElements/Button" to="UI/UIElements/Button" method="_on_pressed"]

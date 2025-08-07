@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://ccmm8ga2rpuhy"]
+
+[ext_resource type="Script" path="res://scripts/vanitas.gd" id="1_nhl05"]
+[ext_resource type="PackedScene" uid="uid://cxc1b0xesrf2j" path="res://prefabs/enemy_curve.tscn" id="2_4midn"]
+[ext_resource type="Script" path="res://scripts/enddoor.gd" id="2_35ck4"]
+[ext_resource type="Texture2D" uid="uid://de1gjwry5k0sf" path="res://Artboard 15@2x.png" id="2_vxnru"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c6hlt"]
+radius = 25.0
+height = 62.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_om7ca"]
+atlas = ExtResource("2_vxnru")
+region = Rect2(822, 0, 411, 617)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o6p7v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_om7ca")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="vanitas" type="CharacterBody2D" groups=["vanitas"]]
+collision_layer = 0
+script = ExtResource("1_nhl05")
+
+[node name="enemy_curve" parent="." instance=ExtResource("2_4midn")]
+position = Vector2(10, 0)
+
+[node name="lamptime" type="Timer" parent="."]
+wait_time = 3.5
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_35ck4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+light_mask = 2
+visibility_layer = 2
+scale = Vector2(2.53728, 2.53728)
+shape = SubResource("CapsuleShape2D_c6hlt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, -4)
+scale = Vector2(0.356608, 0.356608)
+sprite_frames = SubResource("SpriteFrames_o6p7v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+scale = Vector2(2.53728, 2.53728)
+shape = SubResource("CapsuleShape2D_c6hlt")
+disabled = true
+
+[connection signal="timeout" from="lamptime" to="." method="_on_lamptime_timeout"]

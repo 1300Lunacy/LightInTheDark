@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=4 uid="uid://dos5iog5vy813"]
+[gd_scene load_steps=13 format=4 uid="uid://dos5iog5vy813"]
 
 [ext_resource type="PackedScene" uid="uid://gocxwvqmpweu" path="res://prefabs/enddoor.tscn" id="1_4wfbf"]
+[ext_resource type="Texture2D" uid="uid://3fu5rsj0tg7g" path="res://black background.jpg" id="1_tuwop"]
 [ext_resource type="PackedScene" uid="uid://bl00xnix3vuoc" path="res://prefabs/player.tscn" id="2_a5cb3"]
 [ext_resource type="PackedScene" uid="uid://d0d6shco5bd6f" path="res://prefabs/tile_map_layer.tscn" id="3_gtefn"]
 [ext_resource type="PackedScene" uid="uid://c6t2q4rqdl0fx" path="res://prefabs/pedestal.tscn" id="4_03col"]
@@ -10,8 +11,14 @@
 [ext_resource type="PackedScene" uid="uid://ciracireggjkn" path="res://prefabs/switchplatform.tscn" id="8_63l1u"]
 [ext_resource type="Script" path="res://scripts/switch_things.gd" id="8_ryhuc"]
 [ext_resource type="PackedScene" uid="uid://x84pymnlr5ks" path="res://prefabs/invisiblewall.tscn" id="10_dud4t"]
+[ext_resource type="PackedScene" uid="uid://ccmm8ga2rpuhy" path="res://prefabs/vanitas.tscn" id="12_hspfw"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="BlackBackground" type="Sprite2D" parent="."]
+position = Vector2(6270.25, -845.75)
+scale = Vector2(19.1585, 12.868)
+texture = ExtResource("1_tuwop")
 
 [node name="TileMapLayer" parent="." instance=ExtResource("3_gtefn")]
 position = Vector2(354, 356)
@@ -19,7 +26,7 @@ tile_map_data = PackedByteArray("AAAEAAcAAAACAAAAAAAFAAcAAAACAAAAAAAGAAcAAAACAAA
 
 [node name="enddoor" parent="." instance=ExtResource("1_4wfbf")]
 position = Vector2(12813, -202)
-next_scene = "visualnovel_3"
+next_scene = "level_4"
 
 [node name="pedestal" parent="." instance=ExtResource("4_03col")]
 position = Vector2(3380, -208)
@@ -47,16 +54,16 @@ position = Vector2(3691, -1054)
 position = Vector2(4230, -1235)
 
 [node name="pedeplatform11" parent="platform challenge" instance=ExtResource("5_ts7x7")]
-position = Vector2(5856, -1773)
+position = Vector2(5914, -1618)
 
 [node name="pedeplatform12" parent="platform challenge" instance=ExtResource("5_ts7x7")]
-position = Vector2(6475, -1958)
+position = Vector2(6469, -1704)
 
 [node name="pedeplatform9" parent="platform challenge" instance=ExtResource("5_ts7x7")]
-position = Vector2(4763, -1412)
+position = Vector2(4787, -1380)
 
 [node name="pedeplatform10" parent="platform challenge" instance=ExtResource("5_ts7x7")]
-position = Vector2(5271, -1601)
+position = Vector2(5340, -1497)
 
 [node name="pedeplatform13" parent="platform challenge" instance=ExtResource("5_ts7x7")]
 position = Vector2(12290, -1213)
@@ -125,15 +132,18 @@ scale = Vector2(2.48311, 3.08311)
 position = Vector2(-381, -573)
 scale = Vector2(1.79497, 19.5429)
 
-[node name="player" parent="." instance=ExtResource("2_a5cb3")]
-position = Vector2(243, -155)
-
 [node name="nuh uh2" parent="." instance=ExtResource("1_4wfbf")]
 position = Vector2(8869, 2059)
 rotation = -1.5708
 scale = Vector2(2.37439, 23.7442)
 skew = -3.02792e-05
 next_scene = "level_3"
+
+[node name="player" parent="." instance=ExtResource("2_a5cb3")]
+position = Vector2(191, -65)
+
+[node name="vanitas" parent="." instance=ExtResource("12_hspfw")]
+position = Vector2(-1983, 2301)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 visible = false

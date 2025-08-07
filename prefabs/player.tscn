@@ -75,7 +75,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 4.0
+"speed": 6.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vk7hr"]
@@ -142,12 +142,12 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 4.0
+"speed": 6.0
 }]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oglb8"]
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_8ebei")
 SPEED = 275.0
 JUMP_VELOCITY = -650.0
@@ -190,7 +190,7 @@ visible = false
 position = Vector2(1, -8)
 scale = Vector2(0.29924, 0.29924)
 sprite_frames = SubResource("SpriteFrames_43ag6")
-animation = &"jump"
+animation = &"walk"
 autoplay = "idle"
 
 [node name="dark" type="Sprite2D" parent="."]
