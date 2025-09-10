@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvl0ugffdm5gv"]
+[gd_scene load_steps=6 format=3 uid="uid://cvl0ugffdm5gv"]
 
 [ext_resource type="Texture2D" uid="uid://cqd1ns2s2e5cw" path="res://purple lamppost.png" id="1_gmnjd"]
+[ext_resource type="Script" path="res://scripts/lamp_post.gd" id="1_wx68h"]
 [ext_resource type="Script" path="res://scripts/swooning_lamp.gd" id="2_cra26"]
 [ext_resource type="Texture2D" uid="uid://cmkiunytbf2nh" path="res://s_w_o_o_n-removebg-preview.png" id="3_7hc1x"]
 
@@ -8,6 +9,7 @@
 size = Vector2(28, 469)
 
 [node name="lamp_post" type="Node2D"]
+script = ExtResource("1_wx68h")
 
 [node name="lamp" type="Sprite2D" parent="."]
 position = Vector2(478, -44)
@@ -15,11 +17,12 @@ scale = Vector2(0.332341, 0.332341)
 texture = ExtResource("1_gmnjd")
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("2_cra26")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -228.5)
 shape = SubResource("RectangleShape2D_mayxv")
+disabled = true
+script = ExtResource("2_cra26")
 
 [node name="swoontime" type="Timer" parent="."]
 one_shot = true
@@ -31,8 +34,12 @@ scale = Vector2(2.61628, 2.61628)
 texture = ExtResource("3_7hc1x")
 
 [node name="lamp_destory" type="Timer" parent="."]
+wait_time = 0.5
 one_shot = true
 
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="timeout" from="swoontime" to="." method="_on_swoontime_timeout"]
 [connection signal="timeout" from="swoontime" to="Area2D" method="_on_time_to_swoon_timeout"]
+[connection signal="timeout" from="lamp_destory" to="." method="_on_lamp_destory_timeout"]
 [connection signal="timeout" from="lamp_destory" to="Area2D" method="_on_lamp_destory_timeout"]

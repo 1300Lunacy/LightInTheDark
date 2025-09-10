@@ -44,7 +44,7 @@ offset_bottom = 715.0
 text = "Skip
 "
 script = ExtResource("1_8yqw6")
-next_scene = "level_5"
+next_scene = "level_6_addendum"
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="CanvasLayer/Control/Button" to="CanvasLayer/Control/Button" method="_on_pressed"]

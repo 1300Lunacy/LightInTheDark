@@ -52,7 +52,7 @@ position = Vector2(3200, 27)
 scale = Vector2(1.15999, 1.68)
 
 [node name="player" parent="." instance=ExtResource("2_yrlfr")]
-position = Vector2(-684, -16)
+position = Vector2(-468, -18)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 visible = false
