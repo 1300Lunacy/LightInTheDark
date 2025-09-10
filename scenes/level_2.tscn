@@ -25,10 +25,11 @@ position = Vector2(11645, -2690)
 next_scene = "visualnovel_2"
 
 [node name="nuh uh2" parent="." instance=ExtResource("3_8ey77")]
-position = Vector2(8913, 1215)
+position = Vector2(8888, 1837)
 rotation = -1.5708
-scale = Vector2(2.37439, 23.7442)
+scale = Vector2(7.29413, 25.2994)
 skew = -3.02792e-05
+next_scene = "level 2"
 
 [node name="invisiblewall" parent="." instance=ExtResource("4_tedis")]
 position = Vector2(-871, -512)

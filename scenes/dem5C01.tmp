@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0do4i0qvb727"]
+
+[ext_resource type="PackedScene" uid="uid://x84pymnlr5ks" path="res://prefabs/invisiblewall.tscn" id="1_5vh3m"]
+[ext_resource type="PackedScene" uid="uid://d0d6shco5bd6f" path="res://prefabs/tile_map_layer.tscn" id="2_etl12"]
+[ext_resource type="PackedScene" uid="uid://bnn7862rv1b1a" path="res://prefabs/pedestal prefab.tscn" id="4_h2avv"]
+[ext_resource type="PackedScene" uid="uid://bl00xnix3vuoc" path="res://prefabs/player.tscn" id="5_o6dt7"]
+[ext_resource type="PackedScene" uid="uid://ccmm8ga2rpuhy" path="res://prefabs/vanitas.tscn" id="5_r357i"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="invisiblewall2" parent="." instance=ExtResource("1_5vh3m")]
+position = Vector2(-1703, -45990)
+scale = Vector2(6.41041, 5460.22)
+
+[node name="invisiblewall" parent="." instance=ExtResource("1_5vh3m")]
+position = Vector2(1652, -613)
+scale = Vector2(-2.53188, 73.8933)
+
+[node name="TileMapLayer" parent="." instance=ExtResource("2_etl12")]
+position = Vector2(-1080, -75)
+
+[node name="player" parent="." instance=ExtResource("5_o6dt7")]
+position = Vector2(-439, 358)
+
+[node name="pedestal" parent="." instance=ExtResource("4_h2avv")]
+position = Vector2(287, 132)
+
+[node name="vanitas" parent="." instance=ExtResource("5_r357i")]
+position = Vector2(-1, 1285)
+collision_layer = 3
+
+[connection signal="hit" from="player" to="vanitas" method="_on_player_hit"]

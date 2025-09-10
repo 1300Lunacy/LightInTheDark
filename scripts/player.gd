@@ -7,6 +7,11 @@ extends CharacterBody2D
 @onready var can_jump = true
 @onready var _grace = is_on_floor()
 var has_lamp = true
+signal hit
+
+func _ready():
+	Globals.current_scene = get_tree().current_scene.scene_file_path
+
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -74,3 +79,16 @@ func showlamp():
 	$dark2.hide()
 	$dark3.hide()
 	$dark4.hide()
+
+func die():
+	hit.emit()
+	queue_free()
+
+
+
+func _on_area_2d_body_entered(body):
+	print(body)
+	if body.is_in_group("vanitas"):
+		die()
+		hit.emit()
+		$CollisionShape2D.set_deferred("disabled", true)

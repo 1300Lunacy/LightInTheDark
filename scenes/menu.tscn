@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://chwg0wgb4iuue"]
+[gd_scene load_steps=7 format=3 uid="uid://chwg0wgb4iuue"]
 
 [ext_resource type="Script" path="res://scripts/button.gd" id="1_c0uxs"]
 [ext_resource type="Texture2D" uid="uid://3fu5rsj0tg7g" path="res://black background.jpg" id="1_cvrdt"]
 [ext_resource type="Texture2D" uid="uid://ctab5h4lj7rri" path="res://Max-Luna-Character-and-Environmental-Design-2-artboard-9.png" id="2_bkal2"]
 [ext_resource type="Texture2D" uid="uid://djkh4n57fbrq3" path="res://village house.png" id="2_dro1p"]
 [ext_resource type="Texture2D" uid="uid://ocnw7vn2kujj" path="res://village house 2.png" id="3_wwu5p"]
+[ext_resource type="Texture2D" uid="uid://c4p4qfh6l56c0" path="res://Artboard 7.png" id="6_oksnw"]
 
 [node name="Menu" type="Node2D"]
 
@@ -47,36 +48,13 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="TextEdit" type="TextEdit" parent="CanvasLayer/UIElements"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.260742
-anchor_top = 0.207944
-anchor_right = 0.712859
-anchor_bottom = 0.318056
-offset_top = 0.279999
-offset_right = 0.0319824
-grow_horizontal = 2
-grow_vertical = 0
-text = "A Light In The Dark"
-placeholder_text = "skibidi"
-editable = false
-context_menu_enabled = false
-shortcut_keys_enabled = false
-selecting_enabled = false
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-virtual_keyboard_enabled = false
-middle_mouse_paste_enabled = false
-metadata/_edit_use_anchors_ = true
-
 [node name="Button" type="Button" parent="CanvasLayer/UIElements"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.500977
-anchor_top = -0.445833
-anchor_right = -0.415039
-anchor_bottom = -0.398611
+anchor_left = -0.303711
+anchor_top = -0.204167
+anchor_right = -0.217773
+anchor_bottom = -0.156945
 offset_left = 910.0
 offset_top = 671.0
 offset_right = 1023.0
@@ -86,5 +64,9 @@ text = "Start
 script = ExtResource("1_c0uxs")
 next_scene = "visualnovel_1"
 metadata/_edit_use_anchors_ = true
+
+[node name="Artboard7" type="Sprite2D" parent="CanvasLayer/UIElements"]
+position = Vector2(712, 317)
+texture = ExtResource("6_oksnw")
 
 [connection signal="pressed" from="CanvasLayer/UIElements/Button" to="CanvasLayer/UIElements/Button" method="_on_pressed"]

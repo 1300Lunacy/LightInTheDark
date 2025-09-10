@@ -1,45 +1,44 @@
-[gd_scene load_steps=26 format=3 uid="uid://bl00xnix3vuoc"]
+[gd_scene load_steps=26 format=3 uid="uid://bygkk2665behl"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_8ebei"]
-[ext_resource type="Texture2D" uid="uid://cik5wkputxptj" path="res://2d_lights_and_shadows_neutral_point_light.webp" id="3_22d21"]
-[ext_resource type="Texture2D" uid="uid://4ykr0ipgqj8d" path="res://lampcherah.png" id="3_gmvqh"]
-[ext_resource type="Texture2D" uid="uid://bagihavdad0p1" path="res://lamplight.png" id="5_d2bjf"]
-[ext_resource type="Texture2D" uid="uid://chcu6ke11so8p" path="res://spritesheet_yanny.png" id="6_enqmw"]
-[ext_resource type="Texture2D" uid="uid://lyb7bmcx7xuw" path="res://dark.png" id="6_r7jrs"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_umoe0"]
+[ext_resource type="Texture2D" uid="uid://4ykr0ipgqj8d" path="res://lampcherah.png" id="2_anapl"]
+[ext_resource type="Texture2D" uid="uid://chcu6ke11so8p" path="res://spritesheet_yanny.png" id="3_hwlpj"]
+[ext_resource type="Texture2D" uid="uid://cik5wkputxptj" path="res://2d_lights_and_shadows_neutral_point_light.webp" id="4_iunr0"]
+[ext_resource type="Texture2D" uid="uid://bagihavdad0p1" path="res://lamplight.png" id="5_3to3n"]
+[ext_resource type="Texture2D" uid="uid://lyb7bmcx7xuw" path="res://dark.png" id="6_s6n4r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_orgrn"]
-radius = 12.6721
-height = 53.8091
+radius = 14.0
+height = 50.9868
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5ecxs"]
-radius = 43.0314
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aaxo3"]
-atlas = ExtResource("6_enqmw")
+atlas = ExtResource("3_hwlpj")
 region = Rect2(656, 1796, 321, 487)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t1xg1"]
-atlas = ExtResource("6_enqmw")
+atlas = ExtResource("3_hwlpj")
 region = Rect2(1298, 1796, 321, 487)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5mvi2"]
-atlas = ExtResource("6_enqmw")
+atlas = ExtResource("3_hwlpj")
 region = Rect2(82, 255, 506, 596)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3ikhq"]
-atlas = ExtResource("6_enqmw")
+atlas = ExtResource("3_hwlpj")
 region = Rect2(335, 1796, 321, 487)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e3odu"]
-atlas = ExtResource("6_enqmw")
+atlas = ExtResource("3_hwlpj")
 region = Rect2(656, 1796, 321, 487)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bxa32"]
-atlas = ExtResource("6_enqmw")
+atlas = ExtResource("3_hwlpj")
 region = Rect2(977, 1796, 321, 487)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_we1cd"]
-atlas = ExtResource("6_enqmw")
+atlas = ExtResource("3_hwlpj")
 region = Rect2(1298, 1796, 321, 487)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_plouh"]
@@ -82,31 +81,31 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vk7hr"]
-atlas = ExtResource("6_enqmw")
+atlas = ExtResource("3_hwlpj")
 region = Rect2(622, 1350, 320, 450)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pfqfx"]
-atlas = ExtResource("6_enqmw")
+atlas = ExtResource("3_hwlpj")
 region = Rect2(1262, 1350, 320, 450)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3wv5c"]
-atlas = ExtResource("6_enqmw")
+atlas = ExtResource("3_hwlpj")
 region = Rect2(78, 876, 320, 438)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pm8fa"]
-atlas = ExtResource("6_enqmw")
+atlas = ExtResource("3_hwlpj")
 region = Rect2(302, 1350, 320, 450)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ivg5p"]
-atlas = ExtResource("6_enqmw")
+atlas = ExtResource("3_hwlpj")
 region = Rect2(622, 1350, 320, 450)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vghjv"]
-atlas = ExtResource("6_enqmw")
+atlas = ExtResource("3_hwlpj")
 region = Rect2(942, 1350, 320, 450)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fclqh"]
-atlas = ExtResource("6_enqmw")
+atlas = ExtResource("3_hwlpj")
 region = Rect2(1262, 1350, 320, 450)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_43ag6"]
@@ -151,35 +150,27 @@ animations = [{
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oglb8"]
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
-collision_mask = 7
-script = ExtResource("1_8ebei")
+collision_mask = 6
+script = ExtResource("1_umoe0")
 SPEED = 275.0
 JUMP_VELOCITY = -650.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-light_mask = 5
-visibility_layer = 3
-position = Vector2(0, 1)
-scale = Vector2(2.28849, 2.30444)
+scale = Vector2(2, 2.432)
 shape = SubResource("CapsuleShape2D_orgrn")
 
-[node name="Area2D" type="Area2D" parent="." groups=["player"]]
+[node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(2, 2.432)
-collision_layer = 2
-collision_mask = 2
 
 [node name="hurtbox" type="CollisionShape2D" parent="Area2D"]
-modulate = Color(1, 0.0117647, 0, 1)
 light_mask = 2
 visibility_layer = 2
-scale = Vector2(0.300383, 0.300383)
 shape = SubResource("CircleShape2D_5ecxs")
 
 [node name="lamp" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(32, 16)
 scale = Vector2(0.742049, 0.738277)
-texture = ExtResource("3_gmvqh")
+texture = ExtResource("2_anapl")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
@@ -189,7 +180,7 @@ wait_time = 0.1
 one_shot = true
 
 [node name="lampyanny" type="AnimatedSprite2D" parent="."]
-position = Vector2(14, -10)
+position = Vector2(16, -13)
 scale = Vector2(0.298287, 0.298287)
 sprite_frames = SubResource("SpriteFrames_plouh")
 animation = &"walk"
@@ -200,7 +191,7 @@ position = Vector2(53.6397, 97.2219)
 rotation = -1.57079
 scale = Vector2(2.47506, 2.4877)
 shadow_enabled = true
-texture = ExtResource("3_22d21")
+texture = ExtResource("4_iunr0")
 texture_scale = 2.43
 height = 100.0
 
@@ -218,32 +209,33 @@ material = SubResource("ShaderMaterial_oglb8")
 position = Vector2(-21.7457, 12.6617)
 rotation = 1.57081
 scale = Vector2(0.277539, 0.262442)
-texture = ExtResource("5_d2bjf")
+texture = ExtResource("5_3to3n")
 
 [node name="dark2" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(485.95, -9)
 scale = Vector2(0.24166, 1.61633)
-texture = ExtResource("6_r7jrs")
+texture = ExtResource("6_s6n4r")
 
 [node name="dark3" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(-15, 756)
 scale = Vector2(1.06494, 1.27135)
-texture = ExtResource("6_r7jrs")
+texture = ExtResource("6_s6n4r")
 
 [node name="dark4" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(-18, -1736)
 scale = Vector2(1.07149, 5.02337)
-texture = ExtResource("6_r7jrs")
+texture = ExtResource("6_s6n4r")
 
 [node name="lamplight" type="Sprite2D" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_oglb8")
 position = Vector2(-27, 12)
 rotation = 1.57081
 scale = Vector2(0.380817, 0.380817)
-texture = ExtResource("5_d2bjf")
+texture = ExtResource("5_3to3n")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 visible = false
@@ -253,13 +245,15 @@ energy = 0.0
 height = 1.0
 
 [node name="Dark2" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-24, 752)
 scale = Vector2(1.06494, 1.27135)
-texture = ExtResource("6_r7jrs")
+texture = ExtResource("6_s6n4r")
 
 [node name="Dark3" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-23, -2271.89)
 scale = Vector2(1.06494, 7.63148)
-texture = ExtResource("6_r7jrs")
+texture = ExtResource("6_s6n4r")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

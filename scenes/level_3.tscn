@@ -132,13 +132,6 @@ scale = Vector2(2.48311, 3.08311)
 position = Vector2(-381, -573)
 scale = Vector2(1.79497, 19.5429)
 
-[node name="nuh uh2" parent="." instance=ExtResource("1_4wfbf")]
-position = Vector2(8869, 2059)
-rotation = -1.5708
-scale = Vector2(2.37439, 23.7442)
-skew = -3.02792e-05
-next_scene = "level_3"
-
 [node name="player" parent="." instance=ExtResource("2_a5cb3")]
 position = Vector2(191, -65)
 
@@ -151,6 +144,13 @@ position = Vector2(5291, -5817)
 color = Color(0, 0, 0, 1)
 energy = 0.0
 height = 1.0
+
+[node name="nuh uh2" parent="." instance=ExtResource("1_4wfbf")]
+position = Vector2(9930, 2517)
+rotation = -1.5708
+scale = Vector2(7.29413, 25.2994)
+skew = -3.02792e-05
+next_scene = "level 3"
 
 [connection signal="pickedup" from="pedestal" to="platform challenge" method="_switch_off_all_platforms"]
 [connection signal="placeddown" from="pedestal" to="platform challenge" method="_switch_on_all_platforms"]

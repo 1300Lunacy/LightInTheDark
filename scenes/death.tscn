@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkn0kl0jjlcjm"]
+
+[ext_resource type="Script" path="res://scripts/death.gd" id="1_8ic5y"]
+[ext_resource type="VideoStream" path="res://video/hell of your own making.ogv" id="1_j5iuy"]
+[ext_resource type="Texture2D" uid="uid://lyb7bmcx7xuw" path="res://dark.png" id="2_ywpvr"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8ic5y")
+metadata/_edit_use_anchors_ = true
+
+[node name="Dark" type="Sprite2D" parent="."]
+position = Vector2(505, 361.25)
+scale = Vector2(1, 1.51677)
+texture = ExtResource("2_ywpvr")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.132813
+anchor_top = -0.258333
+anchor_right = 1.25781
+anchor_bottom = 1.76389
+offset_left = 32.0
+offset_top = 184.0
+offset_right = -32.0
+offset_bottom = -184.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.658867, 0.658867)
+stream = ExtResource("1_j5iuy")
+autoplay = true
+metadata/_edit_use_anchors_ = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

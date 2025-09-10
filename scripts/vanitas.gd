@@ -21,18 +21,22 @@ func _process(delta):
 		active = false
 		timer_started = false
 		$lamptime.stop()
+		$chase.stop()
 	
 		
 		
 	
 	if active == true:
 		var distance_to_enemy = (vanitas.global_position - player.global_position).length()
-
+		if distance_to_enemy < 50:
+			Globals.current_scene = get_tree().current_scene.scene_file_path
+			get_tree().change_scene_to_file("res://scenes/death.tscn")
+			
 		velocity = position.direction_to(player.position) * (1 * distance_to_enemy + 1)
 		#if distance_to_enemy <= player:#
 			
 		move_and_slide()
-		print ("glupshitto")
+		
 		
 	
 func lamped():
@@ -47,3 +51,9 @@ func _on_lamptime_timeout():
 	active = true
 	show()
 	print ("timer rah")
+	$rage.play()
+	$chase.play()
+
+
+func _on_player_hit():
+	print("gotcha")
